@@ -92,33 +92,6 @@ EduNest/
 | 📜 Certificate | Certificate section |
 | 📩 Contact | Contact form and information |
 
-## 🚀 How to Run
-
-### Option 1: Using VS Code Live Server
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Sivananthikka/EduNest.git
-```
-
-2. Open the project folder in VS Code.
-
-3. Install the **Live Server** extension in VS Code.
-
-4. Right-click on `index.html`.
-
-5. Select **Open with Live Server**.
-
-6. The EduNest website will open in your browser.
-
-### Option 2: Open Directly
-
-You can also open `index.html` directly in a web browser.
-
-## 🌐 Live Demo
-
-Coming soon...
 
 ## 🎯 Project Purpose
 
@@ -136,27 +109,3 @@ This project helped in practicing:
 - LocalStorage
 - Navigation between pages
 - User interface development
-
-## 🔮 Future Enhancements
-
-- 🔗 Backend integration
-- 🗄️ Database integration
-- 🔐 Real user authentication
-- 📚 Online course enrollment
-- 💳 Online payment integration
-- 👨‍🏫 Instructor dashboard
-- 🛠️ Admin dashboard
-- 📊 Course progress tracking
-- 📝 Online assessments and quizzes
-- 🤖 AI-based learning recommendations
-
-## 👩‍💻 Author
-
-**Sivananthikka R.K.**
-
-B.Tech Artificial Intelligence and Data Science
-
-## ⭐ Acknowledgement
-
-EduNest was developed as a learning and portfolio project to practice
-frontend web development and build a complete online learning platform.
