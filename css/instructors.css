@@ -1,0 +1,675 @@
+/*=========================================
+            GLOBAL
+=========================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+}
+
+
+
+/*=========================================
+            HEADER
+=========================================*/
+
+.page-header{
+
+    background:linear-gradient(135deg,#4338ca,#6366f1);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:90px 20px;
+
+}
+
+.page-header h1{
+
+    font-size:48px;
+
+    margin-bottom:15px;
+
+}
+
+.page-header p{
+
+    font-size:18px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:30px;
+
+}
+
+
+
+/*=========================================
+            SEARCH
+=========================================*/
+
+.search-section{
+
+    padding:40px 8%;
+
+    text-align:center;
+
+}
+
+.search-section input{
+
+    width:100%;
+
+    max-width:550px;
+
+    padding:16px 20px;
+
+    border:2px solid #d1d5db;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.search-section input:focus{
+
+    border-color:#4338ca;
+
+    box-shadow:0 0 10px rgba(67,56,202,.2);
+
+}
+
+
+
+/*=========================================
+        INSTRUCTOR GRID
+=========================================*/
+
+.instructors-container{
+
+    padding:20px 8% 80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+
+
+/*=========================================
+        INSTRUCTOR CARD
+=========================================*/
+
+.instructor-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.instructor-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.instructor-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+.instructor-info{
+
+    padding:25px;
+
+}
+
+.instructor-info h2{
+
+    margin-bottom:10px;
+
+    color:#1e293b;
+
+}
+
+.role{
+
+    color:#4338ca;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.instructor-info p{
+
+    margin:10px 0;
+
+    color:#475569;
+
+    line-height:24px;
+
+}
+
+.rating{
+
+    margin:18px 0;
+
+    font-size:18px;
+
+    color:#f59e0b;
+
+}
+/*=========================================
+        SOCIAL ICONS
+=========================================*/
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:20px 0;
+
+}
+
+.social-icons a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#eef2ff;
+
+    color:#4338ca;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.social-icons a:hover{
+
+    background:#4338ca;
+
+    color:#fff;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*=========================================
+        PROFILE BUTTON
+=========================================*/
+
+.profile-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#4338ca;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.profile-btn:hover{
+
+    background:#312e81;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/*=========================================
+        JOIN OUR TEAM
+=========================================*/
+
+.join-team{
+
+    background:linear-gradient(135deg,#4338ca,#6366f1);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:80px 8%;
+
+}
+
+.join-team h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+.join-team p{
+
+    max-width:750px;
+
+    margin:0 auto 30px;
+
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+.join-btn{
+
+    display:inline-block;
+
+    background:#fff;
+
+    color:#4338ca;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.join-btn:hover{
+
+    background:#f3f4f6;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*=========================================
+        FOOTER
+=========================================*/
+
+footer{
+
+    background:#1e293b;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+.footer-content h2{
+
+    margin-bottom:15px;
+
+    font-size:32px;
+
+}
+
+.footer-content p{
+
+    color:#cbd5e1;
+
+    margin:10px 0;
+
+    line-height:28px;
+
+}
+
+
+
+/*=========================================
+        ANIMATIONS
+=========================================*/
+
+.instructor-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+/*=========================================
+        RESPONSIVE DESIGN
+=========================================*/
+
+@media (max-width:992px){
+
+.instructors-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.page-header h1{
+
+    font-size:40px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.page-header{
+
+    padding:70px 20px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+}
+
+.page-header p{
+
+    font-size:16px;
+
+}
+
+.instructors-container{
+
+    grid-template-columns:1fr;
+
+    padding:20px 5% 60px;
+
+}
+
+.join-team{
+
+    padding:60px 5%;
+
+}
+
+.join-team h2{
+
+    font-size:30px;
+
+}
+
+.join-team p{
+
+    font-size:16px;
+
+}
+
+.social-icons{
+
+    justify-content:center;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.page-header h1{
+
+    font-size:28px;
+
+}
+
+.page-header p{
+
+    font-size:15px;
+
+}
+
+.instructor-info{
+
+    padding:20px;
+
+}
+
+.instructor-info h2{
+
+    font-size:22px;
+
+}
+
+.profile-btn{
+
+    font-size:15px;
+
+}
+
+.join-btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+}
+
+
+
+/*=========================================
+        CUSTOM SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4338ca;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#312e81;
+
+}
+
+
+
+/*=========================================
+        TEXT SELECTION
+=========================================*/
+
+::selection{
+
+    background:#4338ca;
+
+    color:#fff;
+
+}
+
+
+
+/*=========================================
+        DARK MODE
+=========================================*/
+
+body.dark{
+
+    background:#0f172a;
+
+    color:#fff;
+
+}
+
+body.dark .instructor-card{
+
+    background:#1e293b;
+
+}
+
+body.dark .instructor-info h2{
+
+    color:#fff;
+
+}
+
+body.dark .instructor-info p{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .social-icons a{
+
+    background:#334155;
+
+    color:#60a5fa;
+
+}
+
+body.dark .social-icons a:hover{
+
+    background:#60a5fa;
+
+    color:#fff;
+
+}
+
+body.dark footer{
+
+    background:#020617;
+
+}
+
+
+
+/*=========================================
+        HOVER EFFECTS
+=========================================*/
+
+.instructor-card img{
+
+    transition:.4s;
+
+}
+
+.instructor-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.rating span{
+
+    color:#1e293b;
+
+    font-weight:600;
+
+}
+
+body.dark .rating span{
+
+    color:#fff;
+
+}
+
+
+
+/*=========================================
+        END OF INSTRUCTORS CSS
+=========================================*/

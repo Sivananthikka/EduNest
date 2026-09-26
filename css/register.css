@@ -1,0 +1,351 @@
+/*=========================================
+        REGISTER SECTION
+=========================================*/
+
+.register-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8fafc;
+    padding:80px 8%;
+}
+
+.register-container{
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+/*=========================================
+        LEFT PANEL
+=========================================*/
+
+.register-left{
+    background:linear-gradient(135deg,#4338ca,#6366f1);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px;
+}
+
+.register-left img{
+    width:320px;
+    max-width:100%;
+    margin-bottom:30px;
+}
+
+.register-left h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.register-left p{
+    font-size:18px;
+    line-height:30px;
+}
+
+/*=========================================
+        RIGHT PANEL
+=========================================*/
+
+.register-right{
+    padding:60px;
+}
+
+.register-right h2{
+    font-size:36px;
+    color:#1e293b;
+    margin-bottom:10px;
+}
+
+.register-right p{
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+/*=========================================
+        INPUT FIELDS
+=========================================*/
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    color:#334155;
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    border-color:#4338ca;
+    box-shadow:0 0 8px rgba(67,56,202,.25);
+}
+
+/*=========================================
+        TERMS
+=========================================*/
+
+.terms{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:25px;
+    color:#475569;
+    cursor:pointer;
+}
+
+.terms input{
+    width:18px;
+    height:18px;
+}
+
+/*=========================================
+        REGISTER BUTTON
+=========================================*/
+
+.register-right button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#4338ca;
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.register-right button:hover{
+    background:#312e81;
+    transform:translateY(-2px);
+}
+/*=========================================
+        LOGIN LINK
+=========================================*/
+
+.login-link{
+    text-align:center;
+    margin-top:25px;
+    color:#64748b;
+    font-size:16px;
+}
+
+.login-link a{
+    color:#4338ca;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.login-link a:hover{
+    color:#312e81;
+    text-decoration:underline;
+}
+
+
+/*=========================================
+        HOVER EFFECTS
+=========================================*/
+
+.register-container{
+    transition:.4s ease;
+}
+
+.register-container:hover{
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.input-group input:hover{
+    border-color:#4338ca;
+}
+
+
+/*=========================================
+        VALID INPUT STATES
+=========================================*/
+
+.input-group input:valid{
+    border-color:#10b981;
+}
+
+.input-group input:invalid:focus{
+    border-color:#ef4444;
+}
+
+
+/*=========================================
+        PLACEHOLDER
+=========================================*/
+
+.input-group input::placeholder{
+    color:#94a3b8;
+}
+
+
+/*=========================================
+        RESPONSIVE DESIGN
+=========================================*/
+
+@media(max-width:992px){
+
+.register-container{
+    grid-template-columns:1fr;
+}
+
+.register-left{
+    padding:50px;
+}
+
+.register-right{
+    padding:50px;
+}
+
+}
+
+@media(max-width:768px){
+
+.register-section{
+    padding:50px 20px;
+}
+
+.register-left img{
+    width:220px;
+}
+
+.register-left h2{
+    font-size:32px;
+}
+
+.register-left p{
+    font-size:16px;
+}
+
+.register-right{
+    padding:35px 25px;
+}
+
+.register-right h2{
+    font-size:30px;
+}
+
+}
+
+@media(max-width:480px){
+
+.register-left{
+    padding:35px 20px;
+}
+
+.register-left h2{
+    font-size:28px;
+}
+
+.register-right h2{
+    font-size:26px;
+}
+
+.register-right p{
+    font-size:15px;
+}
+
+.input-group input{
+    padding:13px;
+}
+
+.register-right button{
+    padding:13px;
+}
+
+.terms{
+    font-size:14px;
+}
+
+}
+
+
+/*=========================================
+        ANIMATIONS
+=========================================*/
+
+.register-container{
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/*=========================================
+        BUTTON EFFECT
+=========================================*/
+
+.register-right button:active{
+    transform:scale(.98);
+}
+
+
+/*=========================================
+        IMAGE EFFECT
+=========================================*/
+
+.register-left img{
+    animation:floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+
+/*=========================================
+        END OF REGISTER CSS
+=========================================*/

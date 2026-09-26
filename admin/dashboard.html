@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | EduNest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>EduNest Admin</h2>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html" class="active">
+
+<i class="fas fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="users.html">
+
+<i class="fas fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fas fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fas fa-chart-bar"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="../index.html">
+
+<i class="fas fa-home"></i>
+
+Home
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+Admin Dashboard
+
+</h1>
+
+<p>
+
+Manage users, courses, instructors and reports.
+
+</p>
+
+</header>
+
+<!-- Dashboard Cards -->
+
+<section class="dashboard-cards">
+
+<div class="card">
+
+<i class="fas fa-users"></i>
+
+<h2 id="userCount">0</h2>
+
+<p>Total Users</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-user-graduate"></i>
+
+<h2 id="studentCount">0</h2>
+
+<p>Students</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-chalkboard-teacher"></i>
+
+<h2 id="instructorCount">0</h2>
+
+<p>Instructors</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-book-open"></i>
+
+<h2 id="courseCount">0</h2>
+
+<p>Courses</p>
+
+</div>
+
+</section>
+<!--================ RECENT USERS ================-->
+
+<section class="course-overview">
+
+    <h2>Recent Registered Users</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Role</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="recentUsers">
+
+            <!-- JavaScript will load users -->
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+<!--================ DASHBOARD GRID ================-->
+
+<section class="dashboard-grid">
+
+    <!-- System Statistics -->
+
+    <div class="dashboard-box">
+
+        <h2>System Statistics</h2>
+
+        <ul class="class-list">
+
+            <li>
+
+                <strong>Total Courses</strong>
+
+                <br>
+
+                <span id="totalCourses">0</span>
+
+            </li>
+
+            <li>
+
+                <strong>Total Enrollments</strong>
+
+                <br>
+
+                <span id="totalEnrollments">0</span>
+
+            </li>
+
+            <li>
+
+                <strong>Certificates Issued</strong>
+
+                <br>
+
+                <span id="certificateCount">0</span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- Quick Actions -->
+
+    <div class="dashboard-box">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-buttons">
+
+            <a href="users.html" class="action-btn">
+
+                <i class="fas fa-users"></i>
+
+                Manage Users
+
+            </a>
+
+            <a href="courses.html" class="action-btn">
+
+                <i class="fas fa-book"></i>
+
+                Manage Courses
+
+            </a>
+
+            <a href="reports.html" class="action-btn">
+
+                <i class="fas fa-chart-bar"></i>
+
+                View Reports
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--================ FOOTER ================-->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 EduNest Admin Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+
+
+<script src="../js/admin.js"></script>
+<script src="../js/darkmode.js"></script>
+
+</body>
+
+</html>

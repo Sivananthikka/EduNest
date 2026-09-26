@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reports | EduNest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<div class="sidebar">
+
+<h2>EduNest Admin</h2>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fas fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="users.html">
+
+<i class="fas fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fas fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html" class="active">
+
+<i class="fas fa-chart-bar"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="../index.html">
+
+<i class="fas fa-home"></i>
+
+Home
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!--================ MAIN CONTENT ================-->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+Reports & Analytics
+
+</h1>
+
+<p>
+
+Monitor EduNest platform performance and statistics.
+
+</p>
+
+</header>
+
+<!--================ REPORT CARDS ================-->
+
+<section class="dashboard-cards">
+
+<div class="card">
+
+<i class="fas fa-users"></i>
+
+<h2 id="reportUsers">0</h2>
+
+<p>Total Users</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-book-open"></i>
+
+<h2 id="reportCourses">0</h2>
+
+<p>Total Courses</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-user-graduate"></i>
+
+<h2 id="reportEnrollments">0</h2>
+
+<p>Enrollments</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-award"></i>
+
+<h2 id="reportCertificates">0</h2>
+
+<p>Certificates</p>
+
+</div>
+
+</section>
+
+<!--================ REPORT SUMMARY ================-->
+
+<section class="course-overview">
+
+<h2>
+
+Platform Summary
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Metric</th>
+
+<th>Value</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Total Registered Users</td>
+
+<td id="summaryUsers">0</td>
+
+</tr>
+
+<tr>
+
+<td>Total Courses</td>
+
+<td id="summaryCourses">0</td>
+
+</tr>
+
+<tr>
+
+<td>Total Enrollments</td>
+
+<td id="summaryEnrollments">0</td>
+
+</tr>
+
+<tr>
+
+<td>Certificates Issued</td>
+
+<td id="summaryCertificates">0</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+<!--================ PERFORMANCE =================-->
+
+<section class="dashboard-grid">
+
+    <div class="dashboard-box">
+
+        <h2>Platform Performance</h2>
+
+        <ul class="class-list">
+
+            <li>
+
+                <strong>Student Satisfaction</strong>
+
+                <br>
+
+                <span>98%</span>
+
+            </li>
+
+            <li>
+
+                <strong>Course Completion Rate</strong>
+
+                <br>
+
+                <span>89%</span>
+
+            </li>
+
+            <li>
+
+                <strong>Active Instructors</strong>
+
+                <br>
+
+                <span id="activeInstructors">0</span>
+
+            </li>
+
+            <li>
+
+                <strong>Platform Status</strong>
+
+                <br>
+
+                <span style="color:green;font-weight:bold;">
+                    Online
+                </span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <div class="dashboard-box">
+
+        <h2>Report Actions</h2>
+
+        <div class="action-buttons">
+
+            <button
+                class="action-btn"
+                onclick="exportReport()">
+
+                <i class="fas fa-download"></i>
+
+                Export Report
+
+            </button>
+
+            <button
+                class="action-btn"
+                onclick="window.print()">
+
+                <i class="fas fa-print"></i>
+
+                Print Report
+
+            </button>
+
+            <button
+                class="action-btn"
+                onclick="loadReports()">
+
+                <i class="fas fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--================ FOOTER =================-->
+
+<footer class="dashboard-footer">
+
+<p>
+
+© 2026 EduNest Admin Dashboard. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</div>
+
+
+
+<script src="../js/admin.js"></script>
+
+<script>
+
+//==============================
+// LOAD REPORTS
+//==============================
+
+function loadReports(){
+
+    const users =
+        JSON.parse(localStorage.getItem("users")) || [];
+
+    const courses =
+        JSON.parse(localStorage.getItem("instructorCourses")) || [];
+
+    const enrollments = users.reduce((sum,user)=>{
+
+        return sum + (user.enrolledCourses ? user.enrolledCourses.length : 0);
+
+    },0);
+
+    const certificates = users.reduce((sum,user)=>{
+
+        return sum + (user.certificates ? user.certificates.length : 0);
+
+    },0);
+
+    const instructors =
+        users.filter(user=>user.role==="instructor").length;
+
+
+
+    document.getElementById("reportUsers").textContent = users.length;
+    document.getElementById("reportCourses").textContent = courses.length;
+    document.getElementById("reportEnrollments").textContent = enrollments;
+    document.getElementById("reportCertificates").textContent = certificates;
+
+    document.getElementById("summaryUsers").textContent = users.length;
+    document.getElementById("summaryCourses").textContent = courses.length;
+    document.getElementById("summaryEnrollments").textContent = enrollments;
+    document.getElementById("summaryCertificates").textContent = certificates;
+
+    document.getElementById("activeInstructors").textContent = instructors;
+
+}
+
+
+
+//==============================
+// EXPORT REPORT
+//==============================
+
+function exportReport(){
+
+    const report = {
+
+        totalUsers:
+            document.getElementById("reportUsers").textContent,
+
+        totalCourses:
+            document.getElementById("reportCourses").textContent,
+
+        enrollments:
+            document.getElementById("reportEnrollments").textContent,
+
+        certificates:
+            document.getElementById("reportCertificates").textContent
+
+    };
+
+    const blob = new Blob(
+
+        [JSON.stringify(report,null,2)],
+
+        {type:"application/json"}
+
+    );
+
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+
+    link.download = "EduNest_Report.json";
+
+    link.click();
+
+}
+
+
+
+//==============================
+// PAGE LOAD
+//==============================
+
+window.onload = loadReports;
+
+</script>
+<script src="../js/darkmode.js"></script>
+</body>
+
+</html>

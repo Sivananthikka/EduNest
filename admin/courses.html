@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course Management | EduNest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<div class="sidebar">
+
+<h2>EduNest Admin</h2>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fas fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="users.html">
+
+<i class="fas fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html" class="active">
+
+<i class="fas fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fas fa-chart-bar"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="../index.html">
+
+<i class="fas fa-home"></i>
+
+Home
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!--================ MAIN CONTENT ================-->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+Course Management
+
+</h1>
+
+<p>
+
+Manage all published courses across EduNest.
+
+</p>
+
+</header>
+
+
+
+<!--================ SEARCH =================-->
+
+<section class="quick-actions">
+
+<input
+
+type="text"
+
+id="searchCourse"
+
+placeholder="Search Course, Category or Instructor..."
+
+onkeyup="searchCourses()"
+
+style="width:100%;padding:15px;border-radius:10px;border:1px solid #ccc;">
+
+</section>
+
+
+
+<!--================ COURSE TABLE =================-->
+
+<section class="course-overview">
+
+<h2>
+
+Published Courses
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Course</th>
+
+<th>Instructor</th>
+
+<th>Category</th>
+
+<th>Price</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="coursesTable">
+
+<!-- JavaScript loads courses -->
+
+</tbody>
+
+</table>
+
+</section>
+<!--================ FOOTER ================-->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 EduNest Admin Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+
+
+<!--================ JAVASCRIPT ================-->
+
+<script src="../js/admin.js"></script>
+
+<script>
+
+//==============================
+// LOAD COURSES
+//==============================
+
+function loadCourses(){
+
+    const table = document.getElementById("coursesTable");
+
+    table.innerHTML = "";
+
+    let courses = JSON.parse(localStorage.getItem("instructorCourses")) || [];
+
+    if(courses.length === 0){
+
+        table.innerHTML = `
+
+        <tr>
+
+            <td colspan="6" style="text-align:center;padding:30px;">
+
+                No Courses Available
+
+            </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+    courses.forEach((course,index)=>{
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>${course.title}</td>
+
+            <td>${course.instructor || "Instructor"}</td>
+
+            <td>${course.category || "Programming"}</td>
+
+            <td>₹${course.price || 0}</td>
+
+            <td>
+
+                <span class="status active">
+
+                    ${course.status || "Published"}
+
+                </span>
+
+            </td>
+
+            <td>
+
+                <button
+
+                onclick="editCourse(${index})"
+
+                style="background:#3b82f6;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;margin-right:8px;">
+
+                <i class="fas fa-edit"></i>
+
+                </button>
+
+                <button
+
+                onclick="deleteCourse(${index})"
+
+                style="background:#ef4444;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">
+
+                <i class="fas fa-trash"></i>
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+
+//==============================
+// EDIT COURSE
+//==============================
+
+function editCourse(index){
+
+    let courses = JSON.parse(localStorage.getItem("instructorCourses")) || [];
+
+    const newTitle = prompt(
+
+        "Edit Course Title",
+
+        courses[index].title
+
+    );
+
+    if(newTitle === null) return;
+
+    courses[index].title = newTitle;
+
+    localStorage.setItem(
+
+        "instructorCourses",
+
+        JSON.stringify(courses)
+
+    );
+
+    alert("Course Updated Successfully!");
+
+    loadCourses();
+
+}
+
+
+
+//==============================
+// DELETE COURSE
+//==============================
+
+function deleteCourse(index){
+
+    if(confirm("Are you sure you want to delete this course?")){
+
+        let courses = JSON.parse(localStorage.getItem("instructorCourses")) || [];
+
+        courses.splice(index,1);
+
+        localStorage.setItem(
+
+            "instructorCourses",
+
+            JSON.stringify(courses)
+
+        );
+
+        loadCourses();
+
+    }
+
+}
+
+
+
+//==============================
+// SEARCH COURSES
+//==============================
+
+function searchCourses(){
+
+    const input = document
+        .getElementById("searchCourse")
+        .value
+        .toLowerCase();
+
+    const rows =
+        document.querySelectorAll("#coursesTable tr");
+
+    rows.forEach(row=>{
+
+        if(row.innerText.toLowerCase().includes(input)){
+
+            row.style.display = "";
+
+        }
+
+        else{
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+
+//==============================
+// PAGE LOAD
+//==============================
+
+window.onload = loadCourses;
+
+</script>
+<script src="../js/darkmode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,675 @@
+/*=========================================
+            WISHLIST HEADER
+=========================================*/
+
+.wishlist-header{
+
+    background:linear-gradient(135deg,#4338ca,#6366f1);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:80px 8%;
+
+}
+
+.wishlist-header h1{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+.wishlist-header h1 i{
+
+    color:#ff4d6d;
+
+    margin-right:10px;
+
+}
+
+.wishlist-header p{
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+
+
+/*=========================================
+            WISHLIST SECTION
+=========================================*/
+
+.wishlist-section{
+
+    padding:80px 8%;
+
+    background:#f8fafc;
+
+}
+
+.wishlist-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+/*=========================================
+            COURSE CARD
+=========================================*/
+
+.wishlist-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.wishlist-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.wishlist-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.wishlist-content{
+
+    padding:25px;
+
+}
+
+.wishlist-content h3{
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.wishlist-content p{
+
+    color:#64748b;
+
+    line-height:28px;
+
+    margin-bottom:15px;
+
+}
+
+.price{
+
+    color:#4338ca;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+
+
+/*=========================================
+            BUTTONS
+=========================================*/
+
+.card-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.card-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.learn-btn{
+
+    background:#4338ca;
+
+}
+
+.learn-btn:hover{
+
+    background:#312e81;
+
+}
+
+.remove-btn{
+
+    background:#ef4444;
+
+}
+
+.remove-btn:hover{
+
+    background:#dc2626;
+
+}
+/*=========================================
+            EMPTY WISHLIST
+=========================================*/
+
+.empty-wishlist{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    background:#ffffff;
+
+    display:none;
+
+}
+
+.empty-wishlist i{
+
+    font-size:80px;
+
+    color:#ef4444;
+
+    margin-bottom:25px;
+
+}
+
+.empty-wishlist h2{
+
+    font-size:36px;
+
+    color:#1e293b;
+
+    margin-bottom:15px;
+
+}
+
+.empty-wishlist p{
+
+    color:#64748b;
+
+    font-size:17px;
+
+    margin-bottom:30px;
+
+}
+
+.browse-btn{
+
+    display:inline-block;
+
+    background:#4338ca;
+
+    color:#fff;
+
+    padding:14px 30px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.browse-btn:hover{
+
+    background:#312e81;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/*=========================================
+        RECOMMENDED COURSES
+=========================================*/
+
+.recommended-section{
+
+    padding:80px 8%;
+
+    background:#ffffff;
+
+}
+
+.recommended-section h2{
+
+    text-align:center;
+
+    font-size:36px;
+
+    color:#4338ca;
+
+    margin-bottom:50px;
+
+}
+
+.recommended-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.recommend-card{
+
+    background:#f8fafc;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.recommend-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.recommend-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.recommend-card h3{
+
+    padding:20px 20px 10px;
+
+    color:#1e293b;
+
+}
+
+.recommend-card p{
+
+    padding:0 20px;
+
+    color:#f59e0b;
+
+    font-weight:600;
+
+}
+
+.recommend-card span{
+
+    display:block;
+
+    padding:10px 20px;
+
+    font-size:22px;
+
+    color:#4338ca;
+
+    font-weight:700;
+
+}
+
+.recommend-card a{
+
+    display:block;
+
+    margin:20px;
+
+    text-align:center;
+
+    padding:12px;
+
+    background:#4338ca;
+
+    color:#fff;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.recommend-card a:hover{
+
+    background:#312e81;
+
+}
+
+
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+footer{
+
+    background:#1e293b;
+
+    color:#fff;
+
+    padding:60px 8% 20px;
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:35px;
+
+}
+
+.footer-box h2,
+.footer-box h3{
+
+    margin-bottom:20px;
+
+}
+
+.footer-box p,
+.footer-box li{
+
+    color:#cbd5e1;
+
+    line-height:30px;
+
+    list-style:none;
+
+}
+
+.footer-box ul{
+
+    padding:0;
+
+}
+
+.footer-box a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-box a:hover{
+
+    color:#ffffff;
+
+}
+
+footer hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin:30px 0;
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+}
+/*=========================================
+            SCROLL TO TOP BUTTON
+=========================================*/
+
+#scrollTop{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#4338ca;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    transition:.3s;
+    z-index:999;
+}
+
+#scrollTop:hover{
+    background:#312e81;
+    transform:translateY(-5px);
+}
+
+
+
+/*=========================================
+            ANIMATIONS
+=========================================*/
+
+.wishlist-card,
+.recommend-card,
+.empty-wishlist{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+from{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+
+
+/*=========================================
+            IMAGE EFFECTS
+=========================================*/
+
+.wishlist-card img,
+.recommend-card img{
+    transition:.4s;
+}
+
+.wishlist-card:hover img,
+.recommend-card:hover img{
+    transform:scale(1.05);
+}
+
+
+
+/*=========================================
+            BUTTON EFFECTS
+=========================================*/
+
+.card-buttons button:active,
+.browse-btn:active,
+.recommend-card a:active{
+    transform:scale(.96);
+}
+
+
+
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+@media(max-width:992px){
+
+.wishlist-section,
+.recommended-section{
+    padding:60px 5%;
+}
+
+.wishlist-container,
+.recommended-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.wishlist-header{
+    padding:60px 20px;
+}
+
+.wishlist-header h1{
+    font-size:34px;
+}
+
+.wishlist-header p{
+    font-size:16px;
+}
+
+.wishlist-container,
+.recommended-grid{
+    grid-template-columns:1fr;
+}
+
+.card-buttons{
+    flex-direction:column;
+}
+
+.footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+}
+
+@media(max-width:480px){
+
+.wishlist-header h1{
+    font-size:28px;
+}
+
+.empty-wishlist h2{
+    font-size:28px;
+}
+
+.recommended-section h2{
+    font-size:28px;
+}
+
+.wishlist-card img,
+.recommend-card img{
+    height:180px;
+}
+
+.card-buttons button{
+    width:100%;
+}
+
+}
+
+
+
+/*=========================================
+            CUSTOM SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eef2ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4338ca;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#312e81;
+}
+
+
+
+/*=========================================
+            TEXT SELECTION
+=========================================*/
+
+::selection{
+    background:#4338ca;
+    color:#fff;
+}
+
+
+
+
+
+/*=========================================
+            END OF WISHLIST CSS
+=========================================*/

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Instructor Dashboard | EduNest</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/instructor.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>EduNest</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html" class="active">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="add-course.html">
+<i class="fas fa-plus-circle"></i>
+Add Course
+</a>
+</li>
+
+<li>
+<a href="manage-courses.html">
+<i class="fas fa-book"></i>
+Manage Courses
+</a>
+</li>
+
+<li>
+<a href="students.html">
+<i class="fas fa-user-graduate"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="../index.html">
+<i class="fas fa-home"></i>
+Home
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+Welcome Instructor 👋
+
+</h1>
+
+<p>
+
+Manage your courses and students from one place.
+
+</p>
+
+</header>
+
+<!-- Dashboard Cards -->
+
+<section class="dashboard-cards">
+
+<div class="card">
+
+<i class="fas fa-book-open"></i>
+
+<h2 id="courseCount">12</h2>
+
+<p>Total Courses</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-users"></i>
+
+<h2 id="studentCount">285</h2>
+
+<p>Total Students</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-star"></i>
+
+<h2>4.9</h2>
+
+<p>Average Rating</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-dollar-sign"></i>
+
+<h2>₹52K</h2>
+
+<p>Total Revenue</p>
+
+</div>
+
+</section>
+<!--================ COURSE OVERVIEW ================-->
+
+<section class="course-overview">
+
+    <h2>Course Overview</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Course</th>
+
+                <th>Students</th>
+
+                <th>Rating</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>Python Programming</td>
+
+                <td>120</td>
+
+                <td>⭐ 4.9</td>
+
+                <td><span class="status active">Active</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Web Development</td>
+
+                <td>85</td>
+
+                <td>⭐ 4.8</td>
+
+                <td><span class="status active">Active</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Machine Learning</td>
+
+                <td>45</td>
+
+                <td>⭐ 4.7</td>
+
+                <td><span class="status pending">Updating</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>UI / UX Design</td>
+
+                <td>35</td>
+
+                <td>⭐ 4.6</td>
+
+                <td><span class="status active">Active</span></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+<!--================ DASHBOARD GRID ================-->
+
+<section class="dashboard-grid">
+
+    <!-- Recent Reviews -->
+
+    <div class="dashboard-box">
+
+        <h2>Recent Reviews</h2>
+
+        <div class="review">
+
+            <h4>★★★★★</h4>
+
+            <p>
+                "Excellent course! Easy to understand and well structured."
+            </p>
+
+            <span>- Priya S.</span>
+
+        </div>
+
+        <div class="review">
+
+            <h4>★★★★☆</h4>
+
+            <p>
+                "Loved the practical examples."
+            </p>
+
+            <span>- Rahul K.</span>
+
+        </div>
+
+        <div class="review">
+
+            <h4>★★★★★</h4>
+
+            <p>
+                "Best online instructor I've learned from!"
+            </p>
+
+            <span>- Ananya R.</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Upcoming Classes -->
+
+    <div class="dashboard-box">
+
+        <h2>Upcoming Classes</h2>
+
+        <ul class="class-list">
+
+            <li>
+
+                <strong>Python Live Session</strong>
+
+                <br>
+
+                10 July • 10:00 AM
+
+            </li>
+
+            <li>
+
+                <strong>React Workshop</strong>
+
+                <br>
+
+                12 July • 2:00 PM
+
+            </li>
+
+            <li>
+
+                <strong>AI Doubt Session</strong>
+
+                <br>
+
+                15 July • 6:00 PM
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!--================ QUICK ACTIONS ================-->
+
+<section class="quick-actions">
+
+    <h2>Quick Actions</h2>
+
+    <div class="action-buttons">
+
+        <a href="add-course.html" class="action-btn">
+
+            <i class="fas fa-plus-circle"></i>
+
+            Add Course
+
+        </a>
+
+        <a href="manage-courses.html" class="action-btn">
+
+            <i class="fas fa-book"></i>
+
+            Manage Courses
+
+        </a>
+
+        <a href="students.html" class="action-btn">
+
+            <i class="fas fa-user-graduate"></i>
+
+            View Students
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!--================ FOOTER ================-->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 EduNest Instructor Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+
+<script src="../js/instructor.js"></script>
+
+</div>
+
+</body>
+
+</html>

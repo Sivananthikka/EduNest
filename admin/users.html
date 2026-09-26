@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Management | EduNest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<div class="sidebar">
+
+<h2>EduNest Admin</h2>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fas fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="users.html" class="active">
+
+<i class="fas fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fas fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fas fa-chart-bar"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="../index.html">
+
+<i class="fas fa-home"></i>
+
+Home
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!--================ MAIN CONTENT ================-->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+User Management
+
+</h1>
+
+<p>
+
+Manage all registered students, instructors and administrators.
+
+</p>
+
+</header>
+
+<!--================ SEARCH BAR ================-->
+
+<section class="quick-actions">
+
+<input
+
+type="text"
+
+id="searchUser"
+
+placeholder="Search by Name, Email or Role..."
+
+onkeyup="searchUsers()"
+
+style="width:100%;padding:15px;border-radius:10px;border:1px solid #ccc;">
+
+</section>
+
+<!--================ USERS TABLE ================-->
+
+<section class="course-overview">
+
+<h2>
+
+Registered Users
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Role</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="usersTable">
+
+<!-- JavaScript will load users -->
+
+</tbody>
+
+</table>
+
+</section>
+<!--================ FOOTER ================-->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 EduNest Admin Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+
+
+<!--================ JAVASCRIPT ================-->
+
+<script src="../js/admin.js"></script>
+
+<script>
+
+//==============================
+// LOAD USERS
+//==============================
+
+function loadUsers(){
+
+    const table = document.getElementById("usersTable");
+
+    table.innerHTML = "";
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    if(users.length === 0){
+
+        table.innerHTML = `
+
+        <tr>
+
+            <td colspan="5" style="text-align:center;padding:30px;">
+
+                No Users Found
+
+            </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+    users.forEach((user,index)=>{
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>${user.name || "-"}</td>
+
+            <td>${user.email || "-"}</td>
+
+            <td>${user.role || "Student"}</td>
+
+            <td>
+
+                <span class="status active">
+
+                    Active
+
+                </span>
+
+            </td>
+
+            <td>
+
+                <button
+
+                onclick="editUser(${index})"
+
+                style="background:#3b82f6;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;margin-right:8px;">
+
+                <i class="fas fa-edit"></i>
+
+                </button>
+
+                <button
+
+                onclick="deleteUser(${index})"
+
+                style="background:#ef4444;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">
+
+                <i class="fas fa-trash"></i>
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+
+//==============================
+// EDIT USER
+//==============================
+
+function editUser(index){
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const newName = prompt(
+
+        "Edit User Name",
+
+        users[index].name
+
+    );
+
+    if(newName === null) return;
+
+    users[index].name = newName;
+
+    localStorage.setItem(
+
+        "users",
+
+        JSON.stringify(users)
+
+    );
+
+    alert("User Updated Successfully!");
+
+    loadUsers();
+
+}
+
+
+
+//==============================
+// DELETE USER
+//==============================
+
+function deleteUser(index){
+
+    if(confirm("Delete this user?")){
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        users.splice(index,1);
+
+        localStorage.setItem(
+
+            "users",
+
+            JSON.stringify(users)
+
+        );
+
+        loadUsers();
+
+    }
+
+}
+
+
+
+//==============================
+// SEARCH USERS
+//==============================
+
+function searchUsers(){
+
+    const input = document
+        .getElementById("searchUser")
+        .value
+        .toLowerCase();
+
+    const rows =
+        document.querySelectorAll("#usersTable tr");
+
+    rows.forEach(row=>{
+
+        if(row.innerText.toLowerCase().includes(input)){
+
+            row.style.display = "";
+
+        }
+
+        else{
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+
+//==============================
+// PAGE LOAD
+//==============================
+
+window.onload = loadUsers;
+
+</script>
+<script src="../js/darkmode.js"></script>
+</body>
+
+</html>

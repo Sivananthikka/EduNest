@@ -1,0 +1,762 @@
+/*=========================================
+            GLOBAL
+=========================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#f5f7fb;
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+
+/*=========================================
+            SIDEBAR
+=========================================*/
+
+.sidebar{
+
+    width:260px;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:30px 20px;
+
+}
+
+.sidebar h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:28px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar ul li{
+
+    margin:18px 0;
+
+}
+
+.sidebar ul li a{
+
+    display:block;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.sidebar ul li a i{
+
+    margin-right:10px;
+
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active{
+
+    background:#4338ca;
+
+}
+
+
+
+/*=========================================
+            MAIN CONTENT
+=========================================*/
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:35px;
+
+}
+
+header{
+
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:#64748b;
+
+}
+
+
+
+/*=========================================
+        DASHBOARD CARDS
+=========================================*/
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.card i{
+
+    font-size:50px;
+
+    color:#4338ca;
+
+    margin-bottom:18px;
+
+}
+
+.card h2{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#64748b;
+
+}
+/*=========================================
+            RECENT USERS TABLE
+=========================================*/
+
+.course-overview{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:40px;
+
+}
+
+.course-overview h2{
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+}
+
+.course-overview table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.course-overview th{
+
+    background:#4338ca;
+
+    color:#ffffff;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+.course-overview td{
+
+    padding:15px;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#475569;
+
+}
+
+.course-overview tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+
+/*=========================================
+            STATUS BADGES
+=========================================*/
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.status.active{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.status.blocked{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+
+
+/*=========================================
+            DASHBOARD GRID
+=========================================*/
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-box{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.dashboard-box h2{
+
+    color:#1e293b;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/*=========================================
+            STATISTICS LIST
+=========================================*/
+
+.class-list{
+
+    list-style:none;
+
+}
+
+.class-list li{
+
+    background:#f8fafc;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+}
+
+.class-list li:hover{
+
+    background:#eef2ff;
+
+    transform:translateX(6px);
+
+}
+
+.class-list strong{
+
+    color:#1e293b;
+
+}
+
+
+
+/*=========================================
+            ACTION BUTTONS
+=========================================*/
+
+.action-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.action-btn{
+
+    flex:1;
+
+    min-width:180px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#4338ca;
+
+    color:#ffffff;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.action-btn i{
+
+    margin-right:8px;
+
+}
+
+.action-btn:hover{
+
+    background:#312e81;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+.dashboard-footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#64748b;
+
+    border-top:1px solid #e2e8f0;
+
+}
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+@media (max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+
+    width:calc(100% - 220px);
+
+}
+
+.dashboard-cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media (max-width:768px){
+
+body{
+
+    display:block;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.course-overview{
+
+    overflow-x:auto;
+
+}
+
+.course-overview table{
+
+    min-width:700px;
+
+}
+
+.action-buttons{
+
+    flex-direction:column;
+
+}
+
+.action-btn{
+
+    width:100%;
+
+}
+
+}
+
+
+
+@media (max-width:480px){
+
+header h1{
+
+    font-size:28px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.card h2{
+
+    font-size:28px;
+
+}
+
+.card i{
+
+    font-size:40px;
+
+}
+
+.dashboard-box{
+
+    padding:20px;
+
+}
+
+}
+
+
+
+/*=========================================
+            DARK MODE
+=========================================*/
+
+body.dark{
+
+    background:#0f172a;
+
+}
+
+body.dark .main-content{
+
+    background:#0f172a;
+
+}
+
+body.dark header h1{
+
+    color:#ffffff;
+
+}
+
+body.dark header p{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .card,
+
+body.dark .course-overview,
+
+body.dark .dashboard-box{
+
+    background:#1e293b;
+
+}
+
+body.dark .card h2,
+
+body.dark .dashboard-box h2,
+
+body.dark .course-overview h2{
+
+    color:#ffffff;
+
+}
+
+body.dark .card p,
+
+body.dark td,
+
+body.dark .dashboard-footer,
+
+body.dark .class-list li{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .course-overview tr:hover{
+
+    background:#334155;
+
+}
+
+body.dark .class-list li{
+
+    background:#334155;
+
+}
+
+body.dark .class-list li:hover{
+
+    background:#475569;
+
+}
+
+
+
+/*=========================================
+            SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e2e8f0;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4338ca;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#312e81;
+
+}
+
+
+
+/*=========================================
+            TEXT SELECTION
+=========================================*/
+
+::selection{
+
+    background:#4338ca;
+
+    color:#ffffff;
+
+}
+
+
+
+/*=========================================
+            ANIMATIONS
+=========================================*/
+
+.card,
+
+.dashboard-box,
+
+.course-overview{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/*=========================================
+            END OF ADMIN CSS
+=========================================*/

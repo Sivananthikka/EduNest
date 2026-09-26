@@ -1,0 +1,844 @@
+/*=========================================
+            GLOBAL
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    display:flex;
+    min-height:100vh;
+}
+
+
+
+/*=========================================
+            SIDEBAR
+=========================================*/
+
+.sidebar{
+
+    width:260px;
+
+    background:#4338ca;
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:30px 20px;
+
+}
+
+.sidebar h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:30px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar ul li{
+
+    margin:18px 0;
+
+}
+
+.sidebar ul li a{
+
+    display:block;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.sidebar ul li a i{
+
+    margin-right:10px;
+
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active{
+
+    background:rgba(255,255,255,.2);
+
+}
+
+
+
+/*=========================================
+            MAIN CONTENT
+=========================================*/
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:35px;
+
+}
+
+header{
+
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    color:#1e293b;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:#64748b;
+
+}
+
+
+
+/*=========================================
+            DASHBOARD CARDS
+=========================================*/
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:50px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.card i{
+
+    font-size:50px;
+
+    color:#4338ca;
+
+    margin-bottom:20px;
+
+}
+
+.card h2{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#64748b;
+
+}
+/*=========================================
+            COURSE OVERVIEW
+=========================================*/
+
+.course-overview{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:40px;
+
+}
+
+.course-overview h2{
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+}
+
+.course-overview table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.course-overview th{
+
+    background:#4338ca;
+
+    color:#fff;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+.course-overview td{
+
+    padding:15px;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#475569;
+
+}
+
+.course-overview tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+
+/*=========================================
+            STATUS
+=========================================*/
+
+.status{
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.status.active{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+
+
+/*=========================================
+            DASHBOARD GRID
+=========================================*/
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-box{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.dashboard-box h2{
+
+    margin-bottom:20px;
+
+    color:#1e293b;
+
+}
+
+
+
+/*=========================================
+            REVIEWS
+=========================================*/
+
+.review{
+
+    padding:15px;
+
+    border-left:5px solid #4338ca;
+
+    background:#f8fafc;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+}
+
+.review h4{
+
+    color:#f59e0b;
+
+    margin-bottom:8px;
+
+}
+
+.review p{
+
+    color:#475569;
+
+    line-height:26px;
+
+    margin-bottom:8px;
+
+}
+
+.review span{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+
+/*=========================================
+            UPCOMING CLASSES
+=========================================*/
+
+.class-list{
+
+    list-style:none;
+
+}
+
+.class-list li{
+
+    background:#f8fafc;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+    color:#475569;
+
+}
+
+.class-list li:hover{
+
+    transform:translateX(8px);
+
+    background:#eef2ff;
+
+}
+
+.class-list strong{
+
+    color:#1e293b;
+
+}
+
+
+
+/*=========================================
+            QUICK ACTIONS
+=========================================*/
+
+.quick-actions{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:40px;
+
+}
+
+.quick-actions h2{
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+}
+
+.action-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.action-btn{
+
+    flex:1;
+
+    min-width:220px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#4338ca;
+
+    color:#fff;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.action-btn i{
+
+    margin-right:10px;
+
+}
+
+.action-btn:hover{
+
+    background:#312e81;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+.dashboard-footer{
+
+    text-align:center;
+
+    color:#64748b;
+
+    padding:25px;
+
+    border-top:1px solid #e2e8f0;
+
+}
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+
+    width:calc(100% - 220px);
+
+}
+
+.dashboard-cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.action-buttons{
+
+    flex-direction:column;
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+    padding:20px;
+
+}
+
+.sidebar h2{
+
+    margin-bottom:20px;
+
+}
+
+.sidebar ul{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+.sidebar ul li{
+
+    margin:5px;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+header h1{
+
+    font-size:28px;
+
+}
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.course-overview{
+
+    overflow-x:auto;
+
+}
+
+.course-overview table{
+
+    min-width:650px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+header h1{
+
+    font-size:24px;
+
+}
+
+header p{
+
+    font-size:14px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.card h2{
+
+    font-size:28px;
+
+}
+
+.dashboard-box{
+
+    padding:20px;
+
+}
+
+.action-btn{
+
+    min-width:100%;
+
+}
+
+}
+
+
+
+/*=========================================
+            ANIMATIONS
+=========================================*/
+
+.card,
+.dashboard-box,
+.course-overview,
+.quick-actions{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/*=========================================
+            SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4338ca;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#312e81;
+
+}
+
+
+
+/*=========================================
+            TEXT SELECTION
+=========================================*/
+
+::selection{
+
+    background:#4338ca;
+
+    color:#fff;
+
+}
+
+
+
+/*=========================================
+            DARK MODE
+=========================================*/
+
+body.dark{
+
+    background:#0f172a;
+
+    color:#fff;
+
+}
+
+body.dark .main-content{
+
+    background:#0f172a;
+
+}
+
+body.dark header h1,
+
+body.dark .course-overview h2,
+
+body.dark .dashboard-box h2,
+
+body.dark .quick-actions h2{
+
+    color:#ffffff;
+
+}
+
+body.dark header p,
+
+body.dark td,
+
+body.dark .review p,
+
+body.dark .review span,
+
+body.dark .class-list li{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .card,
+
+body.dark .dashboard-box,
+
+body.dark .course-overview,
+
+body.dark .quick-actions{
+
+    background:#1e293b;
+
+}
+
+body.dark .course-overview tr:hover{
+
+    background:#334155;
+
+}
+
+body.dark .class-list li{
+
+    background:#334155;
+
+}
+
+body.dark .class-list li:hover{
+
+    background:#475569;
+
+}
+
+body.dark .dashboard-footer{
+
+    color:#cbd5e1;
+
+    border-top:1px solid #334155;
+
+}
+
+
+
+/*=========================================
+            END OF INSTRUCTOR CSS
+=========================================*/

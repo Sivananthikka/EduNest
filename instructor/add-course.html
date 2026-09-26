@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Course | EduNest</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/instructor.css">
+
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<div class="sidebar">
+
+<h2>EduNest</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="add-course.html" class="active">
+<i class="fas fa-plus-circle"></i>
+Add Course
+</a>
+</li>
+
+<li>
+<a href="manage-courses.html">
+<i class="fas fa-book"></i>
+Manage Courses
+</a>
+</li>
+
+<li>
+<a href="students.html">
+<i class="fas fa-user-graduate"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="../index.html">
+<i class="fas fa-home"></i>
+Home
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!--================ MAIN CONTENT ================-->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+Add New Course
+
+</h1>
+
+<p>
+
+Create a new course for your students.
+
+</p>
+
+</header>
+
+<section class="quick-actions">
+
+<form id="courseForm">
+
+<div class="form-group">
+
+<label>
+
+Course Title
+
+</label>
+
+<input
+
+type="text"
+
+id="title"
+
+placeholder="Enter Course Title"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Course Description
+
+</label>
+
+<textarea
+
+id="description"
+
+rows="5"
+
+placeholder="Course Description"
+
+required>
+
+</textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Category
+
+</label>
+
+<select id="category">
+
+<option>Programming</option>
+
+<option>Web Development</option>
+
+<option>Artificial Intelligence</option>
+
+<option>Data Science</option>
+
+<option>UI / UX</option>
+
+<option>Cloud Computing</option>
+
+</select>
+
+</div>
+<div class="form-group">
+
+<label>
+
+Instructor Name
+
+</label>
+
+<input
+type="text"
+id="instructor"
+placeholder="Enter Instructor Name"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+
+Course Duration
+
+</label>
+
+<input
+type="text"
+id="duration"
+placeholder="Example: 8 Weeks"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+
+Course Price (₹)
+
+</label>
+
+<input
+type="number"
+id="price"
+placeholder="Enter Price"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+
+Course Image URL
+
+</label>
+
+<input
+type="text"
+id="image"
+placeholder="../images/courses/python.jpg">
+
+</div>
+
+
+
+<div class="form-group">
+
+<button
+type="submit"
+class="action-btn">
+
+<i class="fas fa-plus-circle"></i>
+
+Add Course
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+
+
+<footer class="dashboard-footer">
+
+<p>
+
+© 2026 EduNest Instructor Dashboard. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</div>
+
+
+
+<script src="../js/instructor.js"></script>
+
+<script>
+
+document.getElementById("courseForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const course={
+
+id:Date.now(),
+
+title:document.getElementById("title").value,
+
+description:document.getElementById("description").value,
+
+category:document.getElementById("category").value,
+
+instructor:document.getElementById("instructor").value,
+
+duration:document.getElementById("duration").value,
+
+price:document.getElementById("price").value,
+
+image:document.getElementById("image").value || "../images/courses/default.jpg",
+
+students:0,
+
+rating:5.0,
+
+status:"Active"
+
+};
+
+let courses=JSON.parse(localStorage.getItem("instructorCourses")) || [];
+
+courses.push(course);
+
+localStorage.setItem("instructorCourses",JSON.stringify(courses));
+
+alert("🎉 Course Added Successfully!");
+
+document.getElementById("courseForm").reset();
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+/*=========================================
+        LOGIN SECTION
+=========================================*/
+
+.login-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8fafc;
+    padding:80px 8%;
+}
+
+.login-container{
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+/*=========================================
+        LEFT SIDE
+=========================================*/
+
+.login-left{
+    background:linear-gradient(135deg,#4338ca,#6366f1);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+    text-align:center;
+}
+
+.login-left img{
+    width:300px;
+    max-width:100%;
+    margin-bottom:30px;
+}
+
+.login-left h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.login-left p{
+    font-size:18px;
+    line-height:30px;
+}
+
+/*=========================================
+        RIGHT SIDE
+=========================================*/
+
+.login-right{
+    padding:60px;
+}
+
+.login-right h2{
+    font-size:36px;
+    color:#1e293b;
+    margin-bottom:10px;
+}
+
+.login-right p{
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+/*=========================================
+        FORM
+=========================================*/
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#334155;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    border-color:#4338ca;
+    box-shadow:0 0 8px rgba(67,56,202,.2);
+}
+/*=========================================
+        LOGIN OPTIONS
+=========================================*/
+
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+.login-options label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#475569;
+}
+
+.login-options input{
+    width:16px;
+    height:16px;
+    cursor:pointer;
+}
+
+.login-options a{
+    color:#4338ca;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-options a:hover{
+    color:#312e81;
+}
+
+
+/*=========================================
+        LOGIN BUTTON
+=========================================*/
+
+.login-right button[type="submit"]{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#4338ca;
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    margin-bottom:25px;
+}
+
+.login-right button[type="submit"]:hover{
+    background:#312e81;
+    transform:translateY(-2px);
+}
+
+
+/*=========================================
+        DIVIDER
+=========================================*/
+
+.divider{
+    display:flex;
+    align-items:center;
+    text-align:center;
+    margin:30px 0;
+    color:#64748b;
+    font-weight:500;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#d1d5db;
+}
+
+.divider::before{
+    margin-right:15px;
+}
+
+.divider::after{
+    margin-left:15px;
+}
+
+
+/*=========================================
+        SOCIAL LOGIN
+=========================================*/
+
+.social-login{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.social-login button{
+    padding:14px;
+    border:1px solid #d1d5db;
+    background:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.social-login button:hover{
+    background:#4338ca;
+    color:#fff;
+}
+
+.social-login i{
+    margin-right:8px;
+}
+
+
+/*=========================================
+        REGISTER LINK
+=========================================*/
+
+.register-link{
+    text-align:center;
+    color:#64748b;
+    font-size:16px;
+}
+
+.register-link a{
+    color:#4338ca;
+    font-weight:600;
+    transition:.3s;
+}
+
+.register-link a:hover{
+    color:#312e81;
+    text-decoration:underline;
+}
+
+
+/*=========================================
+        HOVER EFFECTS
+=========================================*/
+
+.login-container{
+    transition:.4s ease;
+}
+
+.login-container:hover{
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.input-group input:hover{
+    border-color:#4338ca;
+}
+
+
+/*=========================================
+        RESPONSIVE DESIGN
+=========================================*/
+
+@media(max-width:992px){
+
+.login-container{
+    grid-template-columns:1fr;
+}
+
+.login-left{
+    padding:50px;
+}
+
+.login-right{
+    padding:50px;
+}
+
+}
+
+@media(max-width:768px){
+
+.login-section{
+    padding:50px 20px;
+}
+
+.login-left img{
+    width:220px;
+}
+
+.login-left h2{
+    font-size:32px;
+}
+
+.login-right{
+    padding:35px 25px;
+}
+
+.login-right h2{
+    font-size:30px;
+}
+
+.social-login{
+    grid-template-columns:1fr;
+}
+
+.login-options{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+}
+
+@media(max-width:480px){
+
+.login-left{
+    padding:35px 20px;
+}
+
+.login-left h2{
+    font-size:28px;
+}
+
+.login-right h2{
+    font-size:26px;
+}
+
+.login-right p{
+    font-size:15px;
+}
+
+.input-group input{
+    padding:13px;
+}
+
+.login-right button[type="submit"]{
+    padding:13px;
+}
+
+}
+
+
+/*=========================================
+        ANIMATIONS
+=========================================*/
+
+.login-container{
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+
+/*=========================================
+        END OF LOGIN CSS
+=========================================*/

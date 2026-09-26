@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Students | EduNest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/instructor.css">
+
+</head>
+
+<body>
+
+<!--================ SIDEBAR ================-->
+
+<div class="sidebar">
+
+<h2>EduNest</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="add-course.html">
+<i class="fas fa-plus-circle"></i>
+Add Course
+</a>
+</li>
+
+<li>
+<a href="manage-courses.html">
+<i class="fas fa-book"></i>
+Manage Courses
+</a>
+</li>
+
+<li>
+<a href="students.html" class="active">
+<i class="fas fa-user-graduate"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="../index.html">
+<i class="fas fa-home"></i>
+Home
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!--================ MAIN CONTENT ================-->
+
+<div class="main-content">
+
+<header>
+
+<h1>
+
+Students
+
+</h1>
+
+<p>
+
+View all enrolled students and their learning progress.
+
+</p>
+
+</header>
+
+<!--================ SEARCH =================-->
+
+<section class="quick-actions">
+
+<input
+
+type="text"
+
+id="searchStudent"
+
+placeholder="Search Student..."
+
+onkeyup="searchStudent()"
+
+style="width:100%;padding:15px;border-radius:10px;border:1px solid #ccc;">
+
+</section>
+
+<!--================ STUDENT TABLE =================-->
+
+<section class="course-overview">
+
+<h2>
+
+Student List
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Course</th>
+
+<th>Progress</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="studentTable">
+
+<!-- JavaScript Loads Students -->
+
+</tbody>
+
+</table>
+
+</section>
+<!--================ FOOTER ================-->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 EduNest Instructor Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+
+
+<!--================ JAVASCRIPT ================-->
+
+<script src="../js/instructor.js"></script>
+
+<script>
+
+//==============================
+// LOAD STUDENTS
+//==============================
+
+function loadStudents(){
+
+    const table = document.getElementById("studentTable");
+
+    table.innerHTML = "";
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Students are users who have enrolled courses
+    let students = users.filter(user =>
+        user.enrolledCourses && user.enrolledCourses.length > 0
+    );
+
+    if(students.length === 0){
+
+        table.innerHTML = `
+
+        <tr>
+
+            <td colspan="5" style="text-align:center;padding:30px;">
+
+                No Students Found
+
+            </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+    students.forEach(student=>{
+
+        const firstCourse = student.enrolledCourses[0];
+
+        const progress = firstCourse.progress || 0;
+
+        const status = progress === 100
+            ? "Completed"
+            : "Learning";
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>${student.name}</td>
+
+            <td>${student.email}</td>
+
+            <td>${firstCourse.title}</td>
+
+            <td>${progress}%</td>
+
+            <td>
+
+                <span class="status ${status==="Completed" ? "active" : "pending"}">
+
+                    ${status}
+
+                </span>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+
+//==============================
+// SEARCH STUDENT
+//==============================
+
+function searchStudent(){
+
+    const input =
+    document.getElementById("searchStudent").value.toLowerCase();
+
+    const rows =
+    document.querySelectorAll("#studentTable tr");
+
+    rows.forEach(row=>{
+
+        if(row.innerText.toLowerCase().includes(input)){
+
+            row.style.display="";
+
+        }
+
+        else{
+
+            row.style.display="none";
+
+        }
+
+    });
+
+}
+
+
+
+//==============================
+// PAGE LOAD
+//==============================
+
+window.onload = loadStudents;
+
+</script>
+
+</body>
+
+</html>
